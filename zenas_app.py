@@ -13,5 +13,5 @@ df = pandas.DataFrame(my_catalog)
 color_list = df[0].values.tolist()
 
 streamlit.title('Zena\'s Amazing Athleisure Catalog')
-streamlit.write(color_list)
-#streamlit.selectbox('Pick a sweatsuit color or style:', 
+option = streamlit.selectbox('Pick a sweatsuit color or style:', list(color_list))
+streamlit.write(option)
