@@ -16,3 +16,13 @@ streamlit.title('Zena\'s Amazing Athleisure Catalog')
 option = streamlit.selectbox('Pick a sweatsuit color or style:', list(color_list))
 product_caption = "Our warm, comfortable, " + option + " sweatsuit!"
 streamlit.write(product_caption)
+
+my_cur.execute("select direct_url from catalog_for_website where color_or_style = '" + option + "';")
+df2 = my_cur.fetchone()
+
+streamlit.image(
+  df[0],
+  width = 400,
+  caption = product_caption
+)
+
