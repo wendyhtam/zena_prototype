@@ -10,7 +10,8 @@ my_cur = my_cnx.cursor()
 my_cur.execute("select color_or_style from catalog_for_website")
 my_catalog = my_cur.fetchall()
 df = pandas.DataFrame(my_catalog)
+color_list = df[0].values.tolist()
 
 streamlit.title('Zena\'s Amazing Athleisure Catalog')
-streamlit.write(df)
+streamlit.write(color_list)
 #streamlit.selectbox('Pick a sweatsuit color or style:', 
