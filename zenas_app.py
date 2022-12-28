@@ -19,13 +19,11 @@ streamlit.write(product_caption)
 
 my_cur.execute("select direct_url from catalog_for_website where color_or_style = '" + option + "';")
 df2 = my_cur.fetchone()
-streamlit.text(df2[0])
 
-'''
 streamlit.image(
   df2[0],
   width = 400,
   caption = product_caption
 )
-'''
+
 
